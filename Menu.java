@@ -26,6 +26,7 @@ public class Menu {
 			for (String option : options) {
 				System.out.println(i++ + " - " + option);
 				if(i == 2){
+					//teste criando client
 					System.out.println("client criado");
 					client c = new client() ;
 				}
