@@ -38,4 +38,9 @@ public class Transfer {
 		this.amount = amount;
 	}
 	
+	@Override
+    public String toString() {
+        return "Transfer [accountIn=" + accountIn + ", accountOut=" + accountOut + ", amount=" + amount + "]";
+    }
+
 }

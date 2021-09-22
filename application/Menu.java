@@ -84,7 +84,10 @@ public class Menu {
 					break;
 				}
 				case 8: {
-					bankService.generateTransactionReport();
+					System.out.println("Qual o numero da conta?");
+					int conta = s.nextInt();
+					bankService.generateTransactionReport(conta);
+					s.nextLine();
 					break;
 				}
 			}

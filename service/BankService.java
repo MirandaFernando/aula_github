@@ -92,7 +92,9 @@ public class BankService {
 		System.out.println("Conta fechada!");		
 	}
 
-	public void generateTransactionReport() {
+	public void generateTransactionReport(int id) {
+		Account conta = this.buscarConta(id);
+		conta.getTransfer().forEach(c->System.out.println(c));
 		System.out.println("Relat�rio de transa��es gerado!");		
 	}
 
