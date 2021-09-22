@@ -15,7 +15,9 @@ public class BankService {
 	Scanner read = new Scanner(System.in);
 	private double saldo;
 
-	public void createClient() {
+	public void createClient(String nome) {
+		Client client = new Client(nome, null);
+		clients.add(client);
 		System.out.println("Cliente criado!");
 	}
 
