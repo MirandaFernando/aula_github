@@ -19,8 +19,21 @@ public class BankService {
 		System.out.println("Cliente criado!");
 	}
 
-	public void createAccount() {
+	public void createAccount(String nome) {
+		Client client = this.buscarClient(nome);
+		Account account = new Account(1, client, 0.0);
+		accounts.add(account);
+		client.setAccount(account);
 		System.out.println("Conta criada!");
+	}
+
+	private Client buscarClient(String nome) {
+		for (Client client : clients) {
+            if (client.getName().equals(nome)) {
+                return client;
+            }
+        }
+		return null;
 	}
 
 	public void checkBalance() {
@@ -34,7 +47,7 @@ public class BankService {
 		System.out.println("Valor do depósito: ");
 		value = read.nextDouble();
 		System.out.println("Realizando Depósito... " + value);
-		conta.setBalance(value)
+		conta.setBalance(value);
 		System.out.println("Deposito efetuado!");
 	}
 	private Account buscarConta(int id){
