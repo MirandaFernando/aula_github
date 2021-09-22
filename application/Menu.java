@@ -60,7 +60,13 @@ public class Menu {
 					break;
 				}
 				case 5: {
-					bankService.withdraw();
+					System.out.println("Qual o numero da conta?");
+					int conta = s.nextInt();
+					s.nextLine();
+					System.out.print("Quanto deseja sacar: ");
+                    Double valor = s.nextDouble();
+					s.nextLine();
+					bankService.withdraw(valor, conta);
 					break;
 				}
 				case 6: {
