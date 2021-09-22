@@ -1,12 +1,14 @@
+package application;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import service.BankService;
 
 public class Menu {
 	private String title;
 	private List<String> options;
+	private BankService bankService;
 
 	public Menu(List<String> options) {
 		this.title = "Menu";
@@ -40,7 +42,43 @@ public class Menu {
 				System.out.println("Opcao errada!");
 				op=0;
 			}
-
+			switch (op) {
+				case 1: {
+					bankService.createClient();
+					break;
+				}
+				case 2: {
+					bankService.createAccount();
+					break;
+				}
+				case 3: {
+					bankService.checkBalance();
+					break;
+				}
+				case 4: {
+					bankService.deposit();
+					break;
+				}
+				case 5: {
+					bankService.withdraw();
+					break;
+				}
+				case 6: {
+					bankService.transfer();
+					break;
+				}
+				case 7: {
+					bankService.closeAccount();
+					break;
+				}
+				case 8: {
+					bankService.generateTransactionReport();
+					break;
+				}
+			}
+				
+			
+			s.close();
 		}
 		return op;
 	}
