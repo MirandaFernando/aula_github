@@ -8,7 +8,7 @@ import service.BankService;
 public class Menu {
 	private String title;
 	private List<String> options;
-	private BankService bankService = new BankService();
+	private BankService bankService;
 
 	public Menu(List<String> options) {
 		this.title = "Menu";
@@ -56,7 +56,9 @@ public class Menu {
 					break;
 				}
 				case 4: {
-					bankService.deposit();
+					System.out.println("Deseja depositar em que conta?: ");
+					int account = s.nextInt());
+					bankService.deposit(account);
 					break;
 				}
 				case 5: {

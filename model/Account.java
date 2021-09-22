@@ -3,6 +3,10 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+private List<Client> clients = new ArrayList<>();
+    
+private List<Account> accounts = new ArrayList<>();
+
 public class Account {
 
 	public static int idCount = 0;
