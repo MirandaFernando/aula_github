@@ -44,7 +44,9 @@ public class Menu {
 			}
 			switch (op) {
 				case 1: {
-					bankService.createClient();
+					System.out.println("Qual o nome do cliente?");
+					String nome = s.nextLine();
+					bankService.createClient(nome);
 					break;
 				}
 				case 2: {
