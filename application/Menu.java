@@ -50,7 +50,9 @@ public class Menu {
 					break;
 				}
 				case 2: {
-					bankService.createAccount();
+					System.out.println("Qual o nome do cliente?");
+					String nome = s.nextLine();
+					bankService.createAccount(nome);
 					break;
 				}
 				case 3: {
