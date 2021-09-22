@@ -46,8 +46,27 @@ public class BankService {
 		return null;
 	}
 
-	public void withdraw() {
+	public void withdraw(Double valor, int id){
+		Account conta = this.buscarConta(id);
+		Double balance = conta.getBalance();
+		if(balance >= valor){
+			balance -= valor;
+			conta.setBalance(balance);
+			System.out.println("Sacado: " + valor);
+			System.out.println("Novo saldo: " + conta.getBalance() + "\n");
+		} else {
+			System.out.println("Saldo insuficiente. Faça um depósito\n");
+		}
 		System.out.println("Saque efetuado!");		
+	}
+
+	private Account buscarConta(int id) {
+		for (Account account : accounts) {
+            if (account.getId() == id) {
+                return account;
+            }
+        }
+		return null;
 	}
 
 	public void transfer() {
